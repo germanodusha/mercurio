@@ -1,16 +1,14 @@
-import Head from 'next/head'
+import { useState } from 'react'
+import Player from '@/components/player'
+import Intro from '@/components/intro'
 import styles from '@/styles/Home.module.scss'
 
 export default function Home() {
+  const [isReady, setReady] = useState(false)
+
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Title</title>
-        <meta name="description" content="Description" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}></main>
+      {isReady ? <Player /> : <Intro onClick={() => setReady(true)} />}
     </div>
   )
 }
