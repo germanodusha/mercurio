@@ -1,0 +1,72 @@
+@import './variables';
+
+$padding: 1em;
+
+.main {
+  color: $yellow;
+  font-family: 'Marcellus';
+  font-size: 2em;
+  height: 100vh;
+  text-transform: uppercase;
+  width: 100vw;
+}
+
+.player {
+  align-items: center;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  height: 100vh;
+  padding: $padding;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+  }
+
+  &__select {
+    background-color: $yellow;
+    border-radius: 1em;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Arial Narrow';
+    font-size: 0.5em;
+    margin: 1em 0;
+    padding: 0 2.5em;
+    transform: scale(80%, 130%);
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__track {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__visualizer {
+    background-color: rgba(255, 0, 0, 0.2);
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+  }
+
+  &__links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin: -2% 0;
+    }
+
+    div img {
+      height: 100%;
+      width: 35vmin;
+    }
+  }
+}

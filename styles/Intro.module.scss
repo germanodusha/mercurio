@@ -1,9 +1,12 @@
+@import './variables';
+
 .intro {
   align-items: center;
-  background-color: #eafd53;
+  background-color: $yellow;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  font-family: 'Arial Narrow';
   height: 100vh;
   left: 0;
   overflow: hidden;
@@ -27,6 +30,6 @@
     font-size: 1.5em;
     font-weight: 500;
     padding-bottom: 1em;
-    transform: scale(70%, 130%);
+    transform: scale(80%, 130%);
   }
 }
