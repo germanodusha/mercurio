@@ -1,0 +1,10 @@
+node_modules/*
+.next/*
+.out/*
+!.prettierrc.js
+public
+*.md
+yarn.lock
+*.scss
+*.json
+.*
