@@ -5,6 +5,7 @@ node_modules/*
 public
 *.md
 yarn.lock
+*.css
 *.scss
 *.json
 .*

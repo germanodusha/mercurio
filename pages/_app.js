@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import '../styles/globals.css'
+import '../styles/fonts.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
