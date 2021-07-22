@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from '@/styles/Intro.module.scss'
 
-const Intro = ({ onClick }) => {
+const Intro = ({ progress, onClick }) => {
   return (
     <div className={styles['intro']} onClick={onClick}>
       <div className={styles['intro__logo']}>
@@ -13,7 +13,7 @@ const Intro = ({ onClick }) => {
         />
       </div>
 
-      <span>Enter - Entrar</span>
+      <span>{progress < 100 ? progress : 'Enter - Entrar'}</span>
     </div>
   )
 }

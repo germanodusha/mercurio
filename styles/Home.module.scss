@@ -1,6 +1,12 @@
 .container {
-  background-color: #000;
   height: 100vh;
   overflow: hidden;
   width: 100vw;
+
+  &__background {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
 }
