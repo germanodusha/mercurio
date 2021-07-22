@@ -45,7 +45,7 @@ const Player = () => {
             </div>
 
             <div className={styles['player__visualizer']}>
-              <audio autoPlay src="/test.mp3" onEnded={onEnded} />
+              <audio autoPlay src={`musics/${track.src}`} onEnded={onEnded} />
             </div>
 
             <span className="desktop-only">mercurio.live</span>

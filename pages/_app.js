@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import playlists from '@/data/playlists'
 import '../styles/globals.css'
 import '../styles/main.scss'
+
+const srcs = playlists.flat(2).map((track) => `musics/${track.src}`)
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -26,6 +29,16 @@ function MyApp({ Component, pageProps }) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {srcs.map((src) => (
+          <link
+            key={src}
+            rel="prefetch"
+            as="audio"
+            type="audio/mp3"
+            href={src}
+          />
+        ))}
       </Head>
 
       <Component {...pageProps} />
