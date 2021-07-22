@@ -1,0 +1,90 @@
+.container {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.circle-container {
+  $color: hsl(66, 100%, 50%);
+  $color-alpha: hsla(66, 100%, 50%, 0);
+  $particle-num: 200;
+  $particle-base-size: 8;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  position: absolute;
+  transform: translateY(-10vh);
+
+  .circle {
+    animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+    background-image: radial-gradient($color, $color 10%, $color-alpha 56%);
+    border-radius: 50%;
+    height: 100%;
+    mix-blend-mode: screen;
+    width: 100%;
+
+    @keyframes fade-frames {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale-frames {
+      0% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+
+      50% {
+        transform: scale3d(2.2, 2.2, 1);
+      }
+
+      100% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+    }
+  }
+
+  @for $i from 1 through $particle-num {
+    &:nth-child(#{$i}) {
+      $circle-size: random($particle-base-size);
+      $start-position-y: random(10) + 100;
+      $frames-name: 'move-frames-' + $i;
+      $move-duration: 28000 + random(9000) + ms;
+      animation-delay: random(37000) + ms;
+      animation-duration: $move-duration;
+
+      animation-name: #{$frames-name};
+      height: $circle-size + px;
+      width: $circle-size + px;
+
+      .circle {
+        animation-delay: random(4000) + ms;
+      }
+
+      @keyframes #{$frames-name} {
+        from {
+          transform: translate3d(random(100) + vw, $start-position-y + vh, 0);
+        }
+
+        /* stylelint-disable */
+        to {
+          transform: translate3d(
+            random(100) + vw,
+            -$start-position-y - random(30) + vh,
+            0
+          );
+        }
+        /* stylelint-enable */
+      }
+    }
+  }
+}
