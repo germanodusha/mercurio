@@ -1,8 +1,23 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import playlists from '@/data/playlists'
+import Modal from '@/components/modal'
 import styles from '@/styles/Player.module.scss'
 
 const Player = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [playing, setPlaying] = useState({ playlistIndex: 0, trackIndex: 0 })
+  const onToggleModal = () => setShowModal((value) => !value)
+  const track = playlists?.[playing.playlistIndex]?.[playing.trackIndex]
+  const onEnded = (e) => console.warn('onEnded', e)
+  const onClose = () => setShowModal(false)
+
+  const onSelectTrack = ({ playlistIndex, trackIndex }) => {
+    setPlaying({ playlistIndex, trackIndex })
+    setShowModal(false)
+  }
+
   return (
     <main className={styles['main']}>
       <div className={styles['player']}>
@@ -18,17 +33,20 @@ const Player = () => {
         <div className={styles['player__wrapper']}>
           <div className={styles['player__wrapper__info']}>
             <span className="mobile-only">mercurio.live</span>
-            <span className={styles['player__select']}>select track</span>
+
+            <span onClick={onToggleModal} className={styles['player__select']}>
+              select track
+            </span>
 
             <div className={styles['player__track']}>
-              <span>fix 0.01</span>
-              <span>jls</span>
-              <span>m-i. lt post-studies</span>
-              <span>toque n.2 remix</span>
-              <span>vitor araújo</span>
+              {track?.descriptions?.map((description, i) => (
+                <span key={i}>{description}</span>
+              ))}
             </div>
 
-            <div className={styles['player__visualizer']} />
+            <div className={styles['player__visualizer']}>
+              <audio autoPlay src="/test.mp3" onEnded={onEnded} />
+            </div>
 
             <span className="desktop-only">mercurio.live</span>
           </div>
@@ -72,6 +90,13 @@ const Player = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        show={showModal}
+        selected={playing}
+        onClose={onClose}
+        onSelect={onSelectTrack}
+      />
     </main>
   )
 }

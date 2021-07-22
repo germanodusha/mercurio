@@ -72,6 +72,7 @@ $padding: 1em;
     margin: 1em 0;
     padding: 0 1.5em;
     transform: scale(90%, 130%);
+    z-index: 10;
 
     &:hover {
       opacity: 0.6;

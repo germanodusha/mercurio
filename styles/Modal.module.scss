@@ -1,0 +1,50 @@
+@import '../styles/variables';
+
+.modal {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 4em 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+
+  @media #{$desktop} {
+    padding: 2.5em 1em;
+  }
+
+  &__inner {
+    align-items: center;
+    background-color: $yellow;
+    border-radius: 1em;
+    color: #000;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    font-family: 'Arial Narrow';
+    height: 100%;
+    max-width: 400px;
+    padding: 0.5em 1em;
+  }
+
+  &__playlist {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+
+    span {
+      cursor: pointer;
+      text-align: center;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__track-selected {
+    opacity: 0.6;
+  }
+}
