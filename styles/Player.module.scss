@@ -104,6 +104,11 @@ $padding: 1em;
     display: flex;
     flex: 1 1;
     flex-direction: column;
+    justify-content: flex-end;
+
+    @media #{$desktop} {
+      justify-content: flex-start;
+    }
 
     a {
       margin: -2% 0;
@@ -111,14 +116,14 @@ $padding: 1em;
 
     div img {
       height: 100%;
-      width: 30vmin;
+      width: 25vmin;
 
       @media #{$mobile-xs} {
-        width: 25vmin;
+        width: 20vmin;
       }
 
       @media #{$desktop} {
-        width: 35vmin;
+        width: 30vmin;
       }
     }
   }
