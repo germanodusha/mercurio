@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import playlists from '@/data/playlists'
+import Visualizer from '@/components/visualizer'
 import Particles from '@/components/particles'
 import Modal from '@/components/modal'
 import styles from '@/styles/Player.module.scss'
@@ -48,7 +49,7 @@ const Player = () => {
             </div>
 
             <div className={styles['player__visualizer']}>
-              <audio autoPlay src={`musics/${track.src}`} onEnded={onEnded} />
+              <Visualizer track={track} onEnded={onEnded} />
             </div>
 
             <span className="desktop-only">mercurio.live</span>
