@@ -3,6 +3,12 @@
   "plugins": ["stylelint-prettier"],
   "rules": {
     "prettier/prettier": true,
-    "max-nesting-depth": [2, { "ignore": ["pseudo-classes"] }]
+    "max-nesting-depth": [
+      2,
+      {
+        "ignore": ["pseudo-classes", "blockless-at-rules"],
+        "ignoreAtRules": ["media"]
+      }
+    ]
   }
 }

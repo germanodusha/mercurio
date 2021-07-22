@@ -6,20 +6,32 @@ const Player = () => {
   return (
     <main className={styles['main']}>
       <div className={styles['player']}>
-        <span>mercurio.live</span>
+        <div className={styles['player__logo']}>
+          <Image
+            alt="Mercúrio logo"
+            src="/mercurio-logo.png"
+            width={222}
+            height={327}
+          />
+        </div>
 
         <div className={styles['player__wrapper']}>
-          <span className={styles['player__select']}>select track</span>
+          <div className={styles['player__wrapper__info']}>
+            <span className="mobile-only">mercurio.live</span>
+            <span className={styles['player__select']}>select track</span>
 
-          <div className={styles['player__track']}>
-            <span>fix 0.01</span>
-            <span>jls</span>
-            <span>m-i. lt post-studies</span>
-            <span>toque n.2 remix</span>
-            <span>vitor araújo</span>
+            <div className={styles['player__track']}>
+              <span>fix 0.01</span>
+              <span>jls</span>
+              <span>m-i. lt post-studies</span>
+              <span>toque n.2 remix</span>
+              <span>vitor araújo</span>
+            </div>
+
+            <div className={styles['player__visualizer']} />
+
+            <span className="desktop-only">mercurio.live</span>
           </div>
-
-          <div className={styles['player__visualizer']}>.</div>
 
           <div className={styles['player__links']}>
             <Link href="/">

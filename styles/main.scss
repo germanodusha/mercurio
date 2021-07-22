@@ -1,3 +1,5 @@
+@import './variables';
+
 @font-face {
   font-display: swap;
   font-family: 'Arial Narrow';
@@ -14,4 +16,20 @@
   font-weight: normal;
   src: url('/fonts/Marcellus-Regular.woff2') format('woff2'),
     url('/fonts/Marcellus-Regular.woff') format('woff');
+}
+
+.mobile-only {
+  display: inherit;
+
+  @media #{$desktop} {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @media #{$desktop} {
+    display: inherit;
+  }
 }
