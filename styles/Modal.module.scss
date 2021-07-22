@@ -18,12 +18,13 @@
   &__inner {
     align-items: center;
     background-color: $yellow;
-    border-radius: 1em;
+    border-radius: 1.3em;
     color: #000;
     display: flex;
     flex: 1 1;
     flex-direction: column;
     font-family: 'Arial Narrow';
+    font-size: 80%;
     height: 100%;
     max-width: 400px;
     padding: 0.5em 1em;
@@ -32,7 +33,7 @@
   &__playlist {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1em;
+    padding: 0.5em 0;
 
     span {
       cursor: pointer;
