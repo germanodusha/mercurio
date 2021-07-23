@@ -91,11 +91,10 @@ $padding: 1em;
   }
 
   &__visualizer {
-    // background-color: $yellow;
     display: flex;
     flex: 1 1;
     flex-direction: column;
-    // opacity: 0.1;
+    justify-content: center;
     width: 100%;
   }
 
