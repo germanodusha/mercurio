@@ -18,6 +18,10 @@
     url('/fonts/Marcellus-Regular.woff') format('woff');
 }
 
+* {
+  cursor: url('/cursor.png') 13 0, auto;
+}
+
 .mobile-only {
   display: inherit;
 
