@@ -70,7 +70,6 @@ $padding: 1em;
     background-color: $yellow;
     border-radius: 1.5em;
     color: #000;
-    cursor: pointer;
     font-family: 'Arial Narrow';
     font-size: 0.5em;
     margin: 1em 0;
@@ -106,6 +105,7 @@ $padding: 1em;
     justify-content: flex-end;
 
     @media #{$desktop} {
+      align-items: flex-end;
       justify-content: flex-start;
     }
 

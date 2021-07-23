@@ -59,15 +59,16 @@ export default function Home() {
     )
   }, [])
 
+  const onClick = () => {
+    if (progress < 100) return
+    setReady(true)
+  }
+
   return (
     <div className={styles.container}>
       <img alt="" className={styles['container__background']} ref={image} />
 
-      {isReady ? (
-        <Player />
-      ) : (
-        <Intro progress={progress} onClick={() => setReady(true)} />
-      )}
+      {isReady ? <Player /> : <Intro progress={progress} onClick={onClick} />}
     </div>
   )
 }

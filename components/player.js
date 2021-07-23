@@ -60,8 +60,8 @@ const Player = () => {
           </div>
 
           <div className={styles['player__links']}>
-            <Link href="/">
-              <a>
+            <Link href="https://www.instagram.com/vitoraraujo.b/">
+              <a target="_blank">
                 <Image
                   alt="Mercurio official store molett"
                   src="/mercurio_store.png"
@@ -72,8 +72,8 @@ const Player = () => {
               </a>
             </Link>
 
-            <Link href="/">
-              <a>
+            <Link href="https://www.instagram.com/vitoraraujo.b/">
+              <a target="_blank">
                 <Image
                   alt="M FM"
                   src="/mfm.png"
@@ -84,8 +84,8 @@ const Player = () => {
               </a>
             </Link>
 
-            <Link href="/">
-              <a>
+            <Link href="https://www.instagram.com/vitoraraujo.b/">
+              <a target="_blank">
                 <Image
                   alt="Bandcamp"
                   src="/bandcamp.png"

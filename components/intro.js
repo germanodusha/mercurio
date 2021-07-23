@@ -13,7 +13,7 @@ const Intro = ({ progress, onClick }) => {
         />
       </div>
 
-      <span>{progress < 100 ? progress : 'Enter - Entrar'}</span>
+      <span>{progress < 100 ? `${progress} %` : 'Enter - Entrar'}</span>
     </div>
   )
 }
