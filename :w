@@ -35,11 +35,6 @@ const Player = () => {
         </div>
 
         <div className={styles['player__wrapper']}>
-          <div
-            className={['desktop-only', styles['player__wrapper__spacer']].join(
-              ' '
-            )}
-          />
 
           <div className={styles['player__wrapper__info']}>
             <span className="mobile-only">mercurio.live</span>
