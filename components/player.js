@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import playlists from '@/data/playlists'
 import Visualizer from '@/components/visualizer'
-import Particles from '@/components/particles'
 import Modal from '@/components/modal'
 import styles from '@/styles/Player.module.scss'
 
@@ -22,8 +21,6 @@ const Player = () => {
 
   return (
     <main className={styles['main']}>
-      <Particles />
-
       <div className={styles['player']}>
         <div className={styles['player__logo']}>
           <Image
