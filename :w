@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import playlists from '@/data/playlists'
-import Visualizer from '@/components/visualizer'
+import Particles from '@/components/particles'
 import Modal from '@/components/modal'
 import styles from '@/styles/Player.module.scss'
 
@@ -21,6 +21,8 @@ const Player = () => {
 
   return (
     <main className={styles['main']}>
+      <Particles />
+
       <div className={styles['player']}>
         <div className={styles['player__logo']}>
           <Image
@@ -33,11 +35,6 @@ const Player = () => {
         </div>
 
         <div className={styles['player__wrapper']}>
-          <div
-            className={['desktop-only', styles['player__wrapper__spacer']].join(
-              ' '
-            )}
-          />
 
           <div className={styles['player__wrapper__info']}>
             <span className="mobile-only">mercurio.live</span>
@@ -53,7 +50,7 @@ const Player = () => {
             </div>
 
             <div className={styles['player__visualizer']}>
-              <Visualizer track={track} onEnded={onEnded} />
+              <audio autoPlay src={`musics/${track.src}`} onEnded={onEnded} />
             </div>
 
             <span className="desktop-only">mercurio.live</span>

@@ -1,0 +1,84 @@
+@import './variables';
+
+.visualizer {
+  align-items: center;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(60, 4px);
+  grid-template-rows: 100%;
+  height: 3em;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  span {
+    animation: bounce-001;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    background: $yellow;
+    // background: linear-gradient(rgba($yellow, 0), $yellow, rgba($yellow, 0));
+    height: 2px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    @for $b from 1 through 60 {
+      &:nth-child(#{$b}) {
+        animation-delay: #{(($b) * (50))}ms;
+      }
+    }
+
+    &:nth-child(2n) {
+      animation-name: bounce-002;
+      animation-timing-function: ease-out;
+    }
+
+    &:nth-child(3n) {
+      animation-name: bounce-003;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes bounce-001 {
+  0% {
+    height: 100%;
+  }
+
+  50% {
+    height: 50%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes bounce-002 {
+  0% {
+    height: 100%;
+  }
+
+  80% {
+    height: 30%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes bounce-003 {
+  0% {
+    height: 80%;
+  }
+
+  30% {
+    height: 20%;
+  }
+
+  100% {
+    height: 80%;
+  }
+}
