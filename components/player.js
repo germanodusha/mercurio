@@ -10,13 +10,31 @@ const Player = () => {
   const [showModal, setShowModal] = useState(false)
   const [playing, setPlaying] = useState({ playlistIndex: 0, trackIndex: 0 })
   const onToggleModal = () => setShowModal((value) => !value)
-  const track = playlists?.[playing.playlistIndex]?.[playing.trackIndex]
-  const onEnded = (e) => console.warn('onEnded', e)
   const onClose = () => setShowModal(false)
+  const track = playlists?.[playing.playlistIndex]?.[playing.trackIndex]
 
   const onSelectTrack = ({ playlistIndex, trackIndex }) => {
     setPlaying({ playlistIndex, trackIndex })
     setShowModal(false)
+  }
+
+  const onEnded = () => {
+    const curTrack = playing.trackIndex
+    const curPlaylist = playing.playlistIndex
+
+    const nextTrack = playlists?.[curPlaylist]?.[curTrack + 1]
+    if (nextTrack) {
+      setPlaying({ playlistIndex: curPlaylist, trackIndex: curTrack + 1 })
+      return
+    }
+
+    const nextPlaylist = playlists?.[curPlaylist + 1]?.[0]
+    if (nextPlaylist) {
+      setPlaying({ playlistIndex: curPlaylist + 1, trackIndex: 0 })
+      return
+    }
+
+    setPlaying({ playlistIndex: 0, trackIndex: 0 })
   }
 
   return (

@@ -11,10 +11,22 @@
   overflow: hidden;
   position: relative;
 
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+  }
+
+  &__paused {
+    animation-play-state: paused !important;
+  }
+
   span {
     animation: bounce-001;
     animation-duration: 900ms;
     animation-iteration-count: infinite;
+    animation-play-state: running;
     animation-timing-function: ease-in;
     background: $yellow;
     // background: linear-gradient(rgba($yellow, 0), $yellow, rgba($yellow, 0));
@@ -37,6 +49,29 @@
     &:nth-child(3n) {
       animation-name: bounce-003;
       animation-timing-function: linear;
+    }
+  }
+
+  &__controls {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &__button {
+      border-color: $yellow;
+      border-radius: 1.5em;
+      border-style: solid;
+      border-width: 1px;
+      color: $yellow;
+      font-family: 'Arial Narrow';
+      font-size: 0.5em;
+      margin: 1em 0;
+      padding: 0 1.5em;
+      transform: scale(90%, 130%);
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 }
