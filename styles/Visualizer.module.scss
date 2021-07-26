@@ -66,8 +66,14 @@
       font-family: 'Arial Narrow';
       font-size: 0.5em;
       margin: 1em 0;
+      min-width: 150px;
       padding: 0 1.5em;
+      text-align: center;
       transform: scale(90%, 130%);
+
+      @media #{$mobile-xs} {
+        min-width: 100px;
+      }
 
       &:hover {
         opacity: 0.6;

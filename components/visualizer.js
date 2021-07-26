@@ -45,7 +45,7 @@ const Visualizer = ({ track, onEnded }) => {
           className={styles['visualizer__controls__button']}
           onClick={onTogglePlay}
         >
-          {audio.current?.paused ? 'PLAY STREAM' : 'PAUSE STREAM'}
+          {audio.current?.paused ? 'PLAY STREAM' : 'PAUSA STREAM'}
         </div>
       </div>
     </>
