@@ -6,9 +6,7 @@ $padding: 1em;
   color: $yellow;
   font-family: 'Marcellus';
   font-size: 1.8em;
-  height: 100vh;
   text-transform: uppercase;
-  width: 100vw;
 
   @media #{$mobile-xs} {
     font-size: 1.3em;
@@ -21,14 +19,15 @@ $padding: 1em;
 
 .player {
   align-items: center;
-  display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  min-height: 85vh;
   padding: $padding;
 
   @media #{$desktop} {
     align-items: flex-start;
     flex-direction: row;
+    height: 100vh;
   }
 
   &__logo {
@@ -48,10 +47,12 @@ $padding: 1em;
     display: flex;
     flex: 1 1;
     flex-direction: column;
+    height: calc(100vh - 100vw);
+    min-height: 55vh;
 
     @media #{$desktop} {
       flex-direction: row;
-      height: 100%;
+      height: 100vh;
     }
 
     &__spacer {
@@ -61,8 +62,9 @@ $padding: 1em;
     &__info {
       align-items: center;
       display: flex;
-      flex: 2 1;
+      flex: 1 1;
       flex-direction: column;
+      height: 100%;
     }
   }
 
@@ -99,18 +101,19 @@ $padding: 1em;
 
   &__links {
     align-items: center;
+    bottom: 0;
     display: flex;
     flex: 1 1;
     flex-direction: column;
     justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    right: 0;
 
     @media #{$desktop} {
       align-items: flex-end;
       justify-content: flex-start;
-    }
-
-    a {
-      margin: -2% 0;
+      position: unset;
     }
 
     div img {
