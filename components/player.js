@@ -78,7 +78,7 @@ const Player = () => {
           </div>
 
           <div className={styles['player__links']}>
-            <Link href="https://www.instagram.com/vitoraraujo.b/">
+            <Link href="https://www.molett.com.br/categorias/colabs/mltt-mercurio-vitor-araujo">
               <a target="_blank">
                 <Image
                   alt="Mercurio official store molett"
